@@ -1,16 +1,19 @@
-# Normal Map generator plugin for godot. 
+# Normal Map Generator Plugin for Godot 4.4
 
-*Note: this is a work in progress. Many improvements are needed. For better normal maps generation, please use [Laigter](https://azagaya.itch.io/laigter). Its also free and opens source.* 
+*Note: This is a work in progress. Many improvements are needed. For better normal map generation, please use [Laigter](https://azagaya.itch.io/laigter). Its also free and opens source, and offers more advanced features.*
 
-This plugin creates a dock that lets you open a texture and create a normal map for it adjusting a few controls. The normal map is exported in the same directory than the original texture, with a "*_n.png" prefix.
+This plugin creates a dock that allows you to open a texture and generate a normal map for it by adjusting a few controls. The normal map is exported to the same directory as the original texture, with a "*_n.png" prefix.
+
+This version has been adapted for the new APIs and features introduced in Godot 4.
 
 ## Contribute
 
-If you know how to use godot, any help is welcome! (Help is needed specially in GUI).
-The plugin is free and open source, but you can also support this (and other of my projects) by buying the pluging [here](https://azagaya.itch.io/godot-normal-map-generator).
+If you're familiar with Godot and would like to help, any assistance is welcome, especially with improving the GUI.
 
-## Screenshots
+## Credit
 
-![imagen](https://user-images.githubusercontent.com/46932830/61579103-28295a00-aad7-11e9-9813-41f5b315cdc8.png)
-![imagen](https://user-images.githubusercontent.com/46932830/61579107-36777600-aad7-11e9-9b81-18c18cb5820f.png)
+Special thanks to Azagaya for developing the original plugin. You can support them by checking out their [Itch](https://azagaya.itch.io) or their [GitHub](https://github.com/azagaya).
 
+## Preview
+
+![image](preview.png)

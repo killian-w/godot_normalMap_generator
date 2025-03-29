@@ -1,3 +1,9 @@
+# Created by https://www.toptal.com/developers/gitignore/api/godot,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=godot,visualstudiocode
+
+### Godot ###
+# Godot 4+ specific ignores
+.godot/
 
 # Godot-specific ignores
 .import/
@@ -15,3 +21,24 @@ mono_crash.*.json
 # System/tool-specific ignores
 .directory
 *~
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# End of https://www.toptal.com/developers/gitignore/api/godot,visualstudiocode
