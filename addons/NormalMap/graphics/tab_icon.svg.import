@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpowsidklqtb"
-path="res://.godot/imported/icon_folder.svg-1d58439b3ecbd8f42f3d621dfcc36a5d.ctex"
+uid="uid://bitiynslx51t8"
+path="res://.godot/imported/tab_icon.svg-da6fa6189081f92fb87422ea5137403b.ctex"
 metadata={
 "has_editor_variant": true,
 "vram_texture": false
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/NormalMap/icons/icon_folder.svg"
-dest_files=["res://.godot/imported/icon_folder.svg-1d58439b3ecbd8f42f3d621dfcc36a5d.ctex"]
+source_file="res://addons/NormalMap/graphics/tab_icon.svg"
+dest_files=["res://.godot/imported/tab_icon.svg-da6fa6189081f92fb87422ea5137403b.ctex"]
 
 [params]
 

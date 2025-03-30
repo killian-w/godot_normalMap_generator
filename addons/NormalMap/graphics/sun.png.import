@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csc7vhaa13xp7"
-path="res://.godot/imported/icon_save.svg-fccde3ad6a816fe01b1788bfdd8c8ceb.ctex"
+uid="uid://ptnyfwohey5x"
+path="res://.godot/imported/sun.png-49e96cfd7149aeda72c59df8b1b01251.ctex"
 metadata={
-"has_editor_variant": true,
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/NormalMap/icons/icon_save.svg"
-dest_files=["res://.godot/imported/icon_save.svg-fccde3ad6a816fe01b1788bfdd8c8ceb.ctex"]
+source_file="res://addons/NormalMap/graphics/sun.png"
+dest_files=["res://.godot/imported/sun.png-49e96cfd7149aeda72c59df8b1b01251.ctex"]
 
 [params]
 
@@ -33,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=true
-editor/convert_colors_with_editor_theme=true

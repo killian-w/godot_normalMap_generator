@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ptnyfwohey5x"
-path="res://.godot/imported/sun.png-d7916967e66992b0ee5a13609dd4a490.ctex"
+uid="uid://cy2v5nxtsohyf"
+path="res://.godot/imported/sample.png-4b5118a038e7328e718e8736f5d9a414.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/NormalMap/icons/sun.png"
-dest_files=["res://.godot/imported/sun.png-d7916967e66992b0ee5a13609dd4a490.ctex"]
+source_file="res://addons/NormalMap/graphics/sample.png"
+dest_files=["res://.godot/imported/sample.png-4b5118a038e7328e718e8736f5d9a414.ctex"]
 
 [params]
 
