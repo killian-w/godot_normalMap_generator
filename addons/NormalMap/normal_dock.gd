@@ -5,7 +5,6 @@ extends EditorPlugin
 # A class member to hold the dock during the plugin lifecycle
 var dock
 var icon
-var image
 
 func _enter_tree():
 	# Initialization of the plugin goes here
@@ -15,10 +14,7 @@ func _enter_tree():
 		# Add the loaded scene to the docks
 		add_control_to_dock(DOCK_SLOT_RIGHT_UR, dock)
 		icon = preload("res://addons/NormalMap/icons/icon.svg") as Texture2D
-		if icon:
-			image = icon.get_image()
-			image.resize(16, 16)
-			var resized_icon = ImageTexture.create_from_image(image)
+		if icon != null:
 			set_dock_tab_icon(dock, icon)
 	else:
 		push_error("Failed to instantiate the dock scene.")

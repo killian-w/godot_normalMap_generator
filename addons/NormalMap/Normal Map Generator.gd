@@ -6,12 +6,15 @@ var current_path = "./generated.png"
 @onready var light2d_node := $GUI/VBoxContainer/ViewportContainer/Viewport/TextureRect/Light2D
 @onready var viewport_container_node := $GUI/VBoxContainer/ViewportContainer
 @onready var texture_rect := $ViewportNormal/Normal
-@onready var emboss_spinbox := $GUI/VBoxContainer/HBoxContainer3/SpinBox
-@onready var emboss_slider := $"GUI/VBoxContainer/HBoxContainer3/Emboss Height"
-@onready var light_slider := $"GUI/VBoxContainer/LightAdjustGroup/LightSlider"
-@onready var light_spinbox := $"GUI/VBoxContainer/LightAdjustGroup/LightSpinBox"
-@onready var bump_spinbox := $GUI/VBoxContainer/HBoxContainer4/BumpSpinBox
-@onready var bump_slider := $"GUI/VBoxContainer/HBoxContainer4/Bump Height"
+
+@onready var emboss_spinbox := $GUI/VBoxContainer/EmbossDropdown/DropdownSection/EmbossSpinBox
+@onready var emboss_slider := $GUI/VBoxContainer/EmbossDropdown/DropdownSection/EmbossSlider
+
+@onready var light_slider := $GUI/VBoxContainer/LightDropdown/DropdownSection/LightAdjustGroup/LightSlider
+@onready var light_spinbox := $GUI/VBoxContainer/LightDropdown/DropdownSection/LightAdjustGroup/LightSpinBox
+
+@onready var bump_spinbox := $GUI/VBoxContainer/BumpDropdown/DropdownSection/BumpSpinBox
+@onready var bump_slider := $GUI/VBoxContainer/BumpDropdown/DropdownSection/BumpSlider
 
 var distance_texture;
 
@@ -24,24 +27,15 @@ func _ready():
 	
 	texture_rect.material.set_shader_parameter("distanceTex", distance_texture)
 	
-	$GUI/VBoxContainer/HBoxContainer_ColorPicker/ColorPickerButton.color = light2d_node.color
+	$GUI/VBoxContainer/LightDropdown/DropdownSection/HBoxContainer_ColorPicker/ColorPickerButton.color = light2d_node.color
 	$GUI/VBoxContainer/ViewportContainer/Viewport/TextureRect.material.set_shader_parameter("normal_texture", $ViewportNormal.get_texture())
 
 func _on_Normal_toggled(button_pressed):
 	$GUI/VBoxContainer/ViewportContainer/Viewport/TextureRect.material.set_shader_parameter("normal_preview", button_pressed)
 
-
-func _on_Emboss_toggled(button_pressed):
-	texture_rect.material.set_shader_parameter("with_emboss", button_pressed)
-
 func _on_Emboss_Height_value_changed(value):
 	texture_rect.material.set_shader_parameter("emboss_height", value)
 	emboss_spinbox.value = value
-
-
-func _on_Bump_toggled(button_pressed):
-	texture_rect.material.set_shader_parameter("with_distance", button_pressed)
-
 
 func _on_Bump_Height_value_changed(value):
 	texture_rect.material.set_shader_parameter("bump_height", value)
@@ -147,10 +141,6 @@ func _on_SpinBox_value_changed(value):
 func _on_BumpSpinBox_value_changed(value):
 	bump_slider.value = value
 
-func _on_light_toggle_toggled(toggled_on: bool) -> void:
-	light2d_node.enabled = toggled_on
-	light2d_node.get_child(0).visible = toggled_on
-
 func _on_light_spin_box_value_changed(value: float) -> void:
 	light2d_node.texture_scale = value
 	light_slider.value = value
@@ -159,3 +149,16 @@ func _on_light_spin_box_value_changed(value: float) -> void:
 func _on_light_slider_value_changed(value: float) -> void:
 	light2d_node.texture_scale = value
 	light_spinbox.value = value
+
+
+func _on_emboss_check_button_toggled(toggled_on: bool) -> void:
+	texture_rect.material.set_shader_parameter("with_emboss", toggled_on)
+
+
+func _on_bump_check_button_toggled(toggled_on: bool) -> void:
+	texture_rect.material.set_shader_parameter("with_distance", toggled_on)
+
+
+func _on_light_check_button_toggled(toggled_on: bool) -> void:
+	light2d_node.enabled = toggled_on
+	light2d_node.get_child(0).visible = toggled_on
