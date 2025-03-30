@@ -16,11 +16,6 @@ run/main_scene="uid://bkv7oe1crdjcv"
 config/features=PackedStringArray("4.4")
 config/icon="res://icon.png"
 
-[editor]
-
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/NormalMap/plugin.cfg")
