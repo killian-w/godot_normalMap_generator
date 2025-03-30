@@ -18,6 +18,32 @@ var current_path = "./generated.png"
 
 var distance_texture;
 
+func set_defaults():
+	_on_Normal_toggled(false)
+		
+	_on_light_check_button_toggled(false)
+	light_slider.value = 1.0
+	light_spinbox.value = 1.0
+	light2d_node.color = "fffb00"
+	$GUI/VBoxContainer/LightDropdown/DropdownSection/HBoxContainer_ColorPicker/ColorPickerButton.color = "fffb00"
+	
+	_on_emboss_check_button_toggled(true)
+	emboss_slider.value = 0.1
+	emboss_spinbox.value = 0.1
+	texture_rect.material.set_shader_parameter("emboss_height", 0.1)
+	
+	_on_bump_check_button_toggled(true)
+	bump_slider.value = 0.3
+	bump_spinbox.value = 0.3
+	texture_rect.material.set_shader_parameter("bump_height", 0.3)
+	
+	_on_SpinBoxBlur_value_changed(5.0)
+		
+	_on_SpinBoxDistance_value_changed(60.0)
+	
+	_on_InvertX_toggled(false)
+	_on_InvertY_toggled(false)
+
 func _ready():
 	$ViewportDistance.size = $ViewportDistance/Distance.texture.get_size()
 	$ViewportDistance/Distance.position = $ViewportDistance.size / 2
@@ -29,7 +55,11 @@ func _ready():
 	
 	$GUI/VBoxContainer/LightDropdown/DropdownSection/HBoxContainer_ColorPicker/ColorPickerButton.color = light2d_node.color
 	$GUI/VBoxContainer/ViewportContainer/Viewport/TextureRect.material.set_shader_parameter("normal_texture", $ViewportNormal.get_texture())
-
+	
+	if Engine.is_editor_hint():
+		$GUI/VBoxContainer/TextureButton.icon = EditorInterface.get_editor_theme().get_icon("Folder", "EditorIcons") as Texture2D
+		$GUI/VBoxContainer/Button.icon = EditorInterface.get_editor_theme().get_icon("Save", "EditorIcons") as Texture2D
+	
 func _on_Normal_toggled(button_pressed):
 	$GUI/VBoxContainer/ViewportContainer/Viewport/TextureRect.material.set_shader_parameter("normal_preview", button_pressed)
 

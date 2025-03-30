@@ -4,18 +4,18 @@ extends EditorPlugin
 
 # A class member to hold the dock during the plugin lifecycle
 var dock
-var icon
+var tab_icon
 
 func _enter_tree():
 	# Initialization of the plugin goes here
 	# Load the dock scene and instance it
 	dock = preload("res://addons/NormalMap/Normal Map Generator.tscn").instantiate()
-	if dock != null:
+	tab_icon = preload("res://addons/NormalMap/graphics/tab_icon.svg") as Texture2D
+	if dock and tab_icon != null:
 		# Add the loaded scene to the docks
 		add_control_to_dock(DOCK_SLOT_RIGHT_UR, dock)
-		icon = preload("res://addons/NormalMap/icons/icon.svg") as Texture2D
-		if icon != null:
-			set_dock_tab_icon(dock, icon)
+		set_dock_tab_icon(dock, tab_icon)
+		dock.set_defaults()
 	else:
 		push_error("Failed to instantiate the dock scene.")
 
